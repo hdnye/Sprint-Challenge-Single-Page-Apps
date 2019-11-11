@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer:  Client-side routing uses state to hold memory/values so information being routed is handled when a resrouce is requested w/o reloading the whole page or asking the server to return the requested information. It loads all the pages up front so the initial load may run slower than with server-side routing however the page can be updated with user information and stay static while SSR refreshes with each request. In CSR, the browser handles all changes rendered. 
 
 ## Project Set Up
 
