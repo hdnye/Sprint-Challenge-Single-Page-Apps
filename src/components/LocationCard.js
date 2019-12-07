@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardImg, CardText, CardBody, CardTitle, Col } from 'reactstrap';
 
-export default function LocationCard({ name, type, dimension, residents }) {
+export default function LocationCard({ props }) {
   return (
     <div>
      <Col xs='6'>
@@ -11,9 +11,9 @@ export default function LocationCard({ name, type, dimension, residents }) {
              <CardTitle>Location</CardTitle>
                <CardText>
                  <p>Name: {props.name}</p>
-                 <p>Type: {props.status}</p>
-                 <p>Dimension: {props.species}</p>
-                 <p>Residents: {props.gender}</p>
+                 <p>Status: {props.status}</p>
+                 <p>Species: {props.species}</p>
+                 <p>Gender: {props.gender}</p>
               </CardText>   
           </CardBody>
        </Card>
@@ -22,4 +22,4 @@ export default function LocationCard({ name, type, dimension, residents }) {
   )
 }
 
-}
+

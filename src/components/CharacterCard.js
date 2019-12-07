@@ -12,11 +12,11 @@ const CharacterCard = (props) => {
            <CardImg />
               <CardTitle>Character</CardTitle>
                 <CardText>
-                  <p>Name: {props.name}</p>
-                  <p>Status: {props.status}</p>
-                  <p>Species: {props.species}</p>
-                  <p>Gender: {props.gender}</p>
-                  <p>Image: {props.image}</p>
+                  <p>Name: {props.char.name}</p>
+                  <p>Status: {props.char.status}</p>
+                  <p>Species: {props.char.species}</p>
+                  <p>Gender: {props.char.gender}</p>
+                  <p>Image: {props.char.image}</p>
                </CardText>   
            </CardBody>
         </Card>

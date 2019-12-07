@@ -15,18 +15,18 @@ export default function App() {
   return (
     <main>
       <Header />
-      <SearchForm />
-       <Route path='/characterlist/:id' render={(props) => {
-          return (
-         <CharacterList {...props} searchForm={(sform) =>
-            setQuery( [...props, sform ])} />     
-        )
-      }} />
-        
-      <Route exact path='/' component={WelcomePage} />
-    </main>
-  );
-}
+        <SearchForm />
+          <Route path='/characterlist/:id' render={(props) => {
+            return (
+             <CharacterList {...props} searchForm={(sform) =>
+               setQuery( [...props, sform ])} />     
+             )
+           }} />     
+        <Route exact path='/' component={WelcomePage} />
+        <Route path='/characters' comoponent={CharacterList} />
+      </main>
+    );
+ }
 
 ReactDOM.render(
   <Router>
