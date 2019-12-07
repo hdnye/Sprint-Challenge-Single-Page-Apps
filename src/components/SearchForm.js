@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
-import { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } from "constants";
+
 
 
 
 export default function SearchForm(props) {
  
-  const [char, setChar] = useState([]);
-  const [query, setQuery] = useState({
-    name:''
-  });
+  const [char, setChar] = useState();
+  // const [query, setQuery] = useState();
 
   // useEffect(() => {
   //   axios.get(`https://rickandmortyapi.com/api/character/`)
@@ -21,17 +19,18 @@ export default function SearchForm(props) {
   //  }, [query]);
 
 const handleInputChange = (event) => {
-    setQuery({...query, name: event.target.value });
+    setChar(event.target.value);
+    // console.log(char);
 }
 
 const submitHandler = (event) => {
   event.preventDefault();
-  const character = props.data.results.filter(char => {
-            return  char.name.toLowerCase().includes(query.toLowerCase()) !== -1;
+  const name = props.characters && props.characters.filter(chars => {
+            return  chars.name.toLowerCase().indexOf(char.toLowerCase()) !== -1;
           });
-         props.setChar(character);
-         console.log(character);
-     };
+      setChar(name);
+        // console.log(character);
+       };
 
   return (
     <section className="search-form">
@@ -39,12 +38,13 @@ const submitHandler = (event) => {
      <h1>Search Form</h1>
        <form onSubmit={submitHandler}>
          {/* Enter character search field */}
+         <label htmlFor='name'></label>
            <input
              type='text' 
              id='name'
              name='name'
              placeholder='Name' 
-             value={query.name} 
+             value={props.name} 
              onChange={handleInputChange} 
             />                
        <button type='submit'>Submit</button>

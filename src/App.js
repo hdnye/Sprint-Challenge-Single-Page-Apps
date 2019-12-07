@@ -22,7 +22,7 @@ export default function App() {
                setQuery( [...props, sform ])} />     
              )
            }} />     
-        <Route exact path='/' component={WelcomePage} />
+         <Route exact path='/' component={WelcomePage} />
         <Route path='/characters' comoponent={CharacterList} />
       </main>
     );
@@ -31,6 +31,7 @@ export default function App() {
 ReactDOM.render(
   <Router>
     <Header />
+    <WelcomePage />
   </Router>,
   document.getElementById("root")
 );
