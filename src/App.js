@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header.js";
 import SearchForm from './components/SearchForm';
 import CharacterList from './components/CharacterList';
+import CharacterCard from './components/CharacterCard';
 import WelcomePage from './components/WelcomePage';
 
 
@@ -15,16 +16,16 @@ export default function App() {
   return (
     <main>
       <Header />
-        <SearchForm />
-          <Route path='/characterlist/:id' render={(props) => {
-            return (
-             <CharacterList {...props} searchForm={(sform) =>
-               setQuery( [...props, sform ])} />     
-             )
-           }} />     
+        {/* <SearchForm /> */}
+          <Route path='/character-list/' component={CharacterList} />     
+             
          <Route exact path='/' component={WelcomePage} />
-        <Route path='/characters' comoponent={CharacterList} />
-      </main>
+         {/* <Route path='/character-card/:id' render={(props) => {
+            return (
+              <CharacterCard {...props} charactercard={CharacterCard} />
+            )
+         }} />  */}
+            </main>
     );
  }
 
